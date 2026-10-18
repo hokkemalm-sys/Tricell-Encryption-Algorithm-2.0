@@ -1,0 +1,11 @@
+    A(["Start / Start"]) --> B["Ange originaltext / Enter plaintext"]
+    B --> C["Ersätt mellanslag med understreck / Replace spaces with underscores"]
+    C --> D["Läs nästa tecken / Read next character"]
+    D --> E["Hämta Unicode-kodpunkt / Get Unicode code point"]
+    E --> F["Addera 31538 (7B32 hex) / Add 31538 (7B32 hex)"]
+    F --> G["Omvandla till Unicode-tecken / Convert to Unicode character"]
+    G --> H{"Fler tecken? / More characters?"}
+    H -- Ja / Yes --> D
+    H -- Nej / No --> I["Lägg till saltprefix (2) och saltsuffix (4) / Add salt prefix (2) and suffix (4)"]
+    I --> J["Visa krypterat meddelande / Output encrypted message"]
+    J --> K(["Slut / End"])
